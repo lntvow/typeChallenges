@@ -1,5 +1,5 @@
 // ============= Test Cases =============
-import type { Equal, Expect } from './test-utils';
+import type { Equal, Expect } from './test-utils'
 
 type cases = [
   Expect<Equal<KebabCase<'FooBarBaz'>, 'foo-bar-baz'>>,
@@ -11,13 +11,13 @@ type cases = [
   Expect<Equal<KebabCase<'-'>, '-'>>,
   Expect<Equal<KebabCase<''>, ''>>,
   Expect<Equal<KebabCase<'😎'>, '😎'>>
-];
+]
 
 // ============= Your Code Here =============
 type KebabCase<S> = S extends `${infer F}${infer R}`
   ? R extends Uncapitalize<R>
     ? `${Lowercase<F>}${KebabCase<R>}`
     : `${Lowercase<F>}-${KebabCase<R>}`
-  : '';
+  : ''
 
-type a = KebabCase<'FooBarBaz'>;
+type a = KebabCase<'FooBarBaz'>

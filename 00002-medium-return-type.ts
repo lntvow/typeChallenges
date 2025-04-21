@@ -1,5 +1,5 @@
 // ============= Test Cases =============
-import type { Equal, Expect } from './test-utils';
+import type { Equal, Expect } from './test-utils'
 
 type cases = [
   Expect<Equal<string, MyReturnType<() => string>>>,
@@ -9,16 +9,16 @@ type cases = [
   Expect<Equal<() => 'foo', MyReturnType<() => () => 'foo'>>>,
   Expect<Equal<1 | 2, MyReturnType<typeof fn>>>,
   Expect<Equal<1 | 2, MyReturnType<typeof fn1>>>
-];
+]
 
 type ComplexObject = {
-  a: [12, 'foo'];
-  bar: 'hello';
-  prev(): number;
-};
+  a: [12, 'foo']
+  bar: 'hello'
+  prev(): number
+}
 
-const fn = (v: boolean) => (v ? 1 : 2);
-const fn1 = (v: boolean, w: any) => (v ? 1 : 2);
+const fn = (v: boolean) => (v ? 1 : 2)
+const fn1 = (v: boolean, w: any) => (v ? 1 : 2)
 
 // ============= Your Code Here =============
-type MyReturnType<T> = T extends (...args: any[]) => infer P ? P : never;
+type MyReturnType<T> = T extends (...args: any[]) => infer P ? P : never

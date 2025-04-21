@@ -1,5 +1,5 @@
 // ============= Test Cases =============
-import type { Equal, Expect } from './test-utils'
+import type { Equal, Expect } from './test-utils';
 
 type cases = [
   Expect<Equal<MyCapitalize<'foobar'>, 'Foobar'>>,
@@ -32,7 +32,7 @@ type cases = [
   Expect<Equal<MyCapitalize<'x'>, 'X'>>,
   Expect<Equal<MyCapitalize<'y'>, 'Y'>>,
   Expect<Equal<MyCapitalize<'z'>, 'Z'>>
-]
+];
 
 // ============= Your Code Here =============
-type MyCapitalize<S extends string> = S extends `${infer R}${infer U}` ? `${Uppercase<R>}${U}` : ''
+type MyCapitalize<S extends string> = S extends `${infer R}${infer U}` ? `${Uppercase<R>}${U}` : '';

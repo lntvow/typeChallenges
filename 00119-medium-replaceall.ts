@@ -1,5 +1,5 @@
 // ============= Test Cases =============
-import type { Equal, Expect } from './test-utils'
+import type { Equal, Expect } from './test-utils';
 
 type cases = [
   Expect<Equal<ReplaceAll<'foobar', 'bar', 'foo'>, 'foofoo'>>,
@@ -11,11 +11,11 @@ type cases = [
   Expect<Equal<ReplaceAll<'foobarfoobar', 'ob', 'b'>, 'fobarfobar'>>,
   Expect<Equal<ReplaceAll<'foboorfoboar', 'bo', 'b'>, 'foborfobar'>>,
   Expect<Equal<ReplaceAll<'', '', ''>, ''>>
-]
+];
 
 // ============= Your Code Here =============
 type ReplaceAll<S extends string, From extends string, To extends string> = From extends ''
   ? S
   : S extends `${infer R}${From}${infer U}`
   ? `${R}${To}${ReplaceAll<`${U}`, From, To>}`
-  : S
+  : S;

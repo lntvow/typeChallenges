@@ -1,5 +1,5 @@
 // ============= Test Cases =============
-import type { Equal, Expect } from './test-utils'
+import type { Equal, Expect } from './test-utils';
 
 type cases = [
   Expect<Equal<TrimLeft<'str'>, 'str'>>,
@@ -9,7 +9,7 @@ type cases = [
   Expect<Equal<TrimLeft<'   \n\t foo bar '>, 'foo bar '>>,
   Expect<Equal<TrimLeft<''>, ''>>,
   Expect<Equal<TrimLeft<' \n\t'>, ''>>
-]
+];
 
 // ============= Your Code Here =============
-type TrimLeft<S extends string> = S extends `${' ' | '\t' | '\n'}${infer U}` ? TrimLeft<U> : S
+type TrimLeft<S extends string> = S extends `${' ' | '\t' | '\n'}${infer U}` ? TrimLeft<U> : S;

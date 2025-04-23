@@ -16,5 +16,4 @@ type errors = [
 ]
 
 // ============= Your Code Here =============
-type First<T extends any[]> = T extends [infer P, ...infer R] ? P : never
-// type First<T extends any[]> = T['length'] extends 0 ? never : T[0];
+type First<T extends any[]> = T['length'] extends 0 ? never : T[0]

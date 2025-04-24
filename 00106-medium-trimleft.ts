@@ -12,4 +12,4 @@ type cases = [
 ]
 
 // ============= Your Code Here =============
-type TrimLeft<S extends string> = S extends `${' ' | '\t' | '\n'}${infer U}` ? TrimLeft<U> : S
+type TrimLeft<S extends string> = S extends `${' ' | '\t' | '\n'}${infer R}` ? TrimLeft<R> : S

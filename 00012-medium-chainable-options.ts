@@ -53,5 +53,3 @@ type Chainable<T = {}> = {
   >
   get(): T
 }
-
-type a = typeof result3

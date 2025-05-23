@@ -9,6 +9,8 @@ type cases = [
 ]
 
 // ============= Your Code Here =============
-type TupleToNestedObject<T, U, R extends any = U> = T extends [...infer F, infer K extends PropertyKey]
-  ? TupleToNestedObject<F, U, { [P in K]: R }>
-  : R
+type TupleToNestedObject<T, U> = T extends [infer F extends PropertyKey, ...infer K]
+  ? {
+      [P in F]: TupleToNestedObject<K, U>
+    }
+  : U

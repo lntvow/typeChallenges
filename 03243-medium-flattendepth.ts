@@ -19,5 +19,3 @@ type FlattenDepth<T extends any[], D = 1, C extends any[] = []> = D extends C['l
     ? [...FlattenDepth<R, D, [...C, 1]>, ...FlattenDepth<U, D, C>]
     : [R, ...FlattenDepth<U, D, C>]
   : T
-
-type a = FlattenDepth<[1, [2]]>

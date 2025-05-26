@@ -19,10 +19,10 @@ type cases = [
 type error = MyAwaited<number>
 
 // ============= Your Code Here =============
-type MyAwaited<T extends PromiseLike<any>> = T extends PromiseLike<infer R>
-  ? R extends PromiseLike<any>
+export type MyAwaited<T extends PromiseLike> = T extends PromiseLike<infer R>
+  ? R extends PromiseLike
     ? MyAwaited<R>
     : R
-  : never
+  : T
 
 type PromiseLike<T = any> = Promise<T> | { then: (onfulfilled: (arg: T) => any) => any }

@@ -30,5 +30,3 @@ type Diff<O, O1> = {
     ? O1[P]
     : never
 }
-
-type a = Diff<Bar, Foo>

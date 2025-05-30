@@ -21,3 +21,7 @@ type cases = [
 
 // ============= Your Code Here =============
 type Permutation<T, C = T> = [T] extends [never] ? [] : T extends any ? [T, ...Permutation<Exclude<C, T>>] : never
+
+type Permutation2<T, C = T> = [T] extends [never] ? '' : T extends string ? `${T}${Permutation2<Exclude<C, T>>}` : never
+
+type a = Permutation2<'A' | 'B' | 'C'>
